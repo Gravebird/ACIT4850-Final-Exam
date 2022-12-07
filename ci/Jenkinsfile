@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Code Quantity') {
             steps {
-                sh 'echo "Bryan Rainbow - Group 26'
+                sh 'echo "Bryan Rainbow - Group 26"'
                 sh 'wc -l < src/main/java/com/mycompany/app/App.java'
             }
         }
@@ -44,7 +44,7 @@ pipeline {
                 expression { params.RUN }
             }
             steps {
-                sh 'echo "Finish soon"'
+                sh 'java -jar target/my-app-1.0-SNAPSHOT.jar'
             }
         }
         stage('Build Results') {
