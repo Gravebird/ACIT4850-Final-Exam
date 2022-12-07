@@ -22,7 +22,8 @@ pipeline {
         }
         stage('Code Quantity') {
             steps {
-                sh 'ec -l < src/main/java/com/mycompany/App.java'
+                sh 'pwd'
+                sh 'wc -l < ./src/main/java/com/mycompany/App.java'
             }
         }
     }
