@@ -1,0 +1,24 @@
+/*
+    Bryan Rainbow
+    Dec 7, 2022
+
+    This pipeline does []
+*/
+pipeline {
+    agent any
+
+    parameters {
+        booleanParam(defaultValue: false, description: 'Whether to Run the Code', name: 'RUN')
+        stringParam(defaultValue: 'Development', description: 'Type of build', name: 'BUILD_TYPE')
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo "Starting Java Build..."'
+                sh 'mvn -B -DskipTests clean install'
+                sh 'echo "Java Build Complete."'
+            }
+        }
+    }
+}
