@@ -24,7 +24,20 @@ pipeline {
             steps {
                 sh 'pwd'
                 sh 'ls'
-                sh 'wc -l < ./src/main/java/com/mycompany/App.java'
+                sh 'wc -l < src/main/java/com/mycompany/app/App.java'
+            }
+        }
+        stage('Test') {
+            when {
+                equals expected: 'Development', actual: params.BUILD_TYPE
+            }
+            steps {
+                sh 'mvn test'
+            }
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                }
             }
         }
     }
