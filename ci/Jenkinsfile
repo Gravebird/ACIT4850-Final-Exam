@@ -20,5 +20,10 @@ pipeline {
                 sh 'echo "Java Build Complete."'
             }
         }
+        stage('Code Quantity') {
+            steps {
+                sh 'App.java | wc -l'
+            }
+        }
     }
 }
