@@ -44,7 +44,7 @@ pipeline {
                 expression { params.RUN }
             }
             steps {
-                sh 'java -jar target/my-app-1.0-SNAPSHOT.jar'
+                sh 'java -jar target/my-app-1.0-SNAPSHOT.jar BryanRainbow'
             }
         }
         stage('Build Results') {
