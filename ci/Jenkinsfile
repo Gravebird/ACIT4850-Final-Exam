@@ -1,10 +1,10 @@
-/*
-    Bryan Rainbow
-    Dec 7, 2022
-
-    This pipeline does []
-*/
 pipeline {
+    /*
+        Bryan Rainbow
+        Dec 7, 2022
+
+        This pipeline does []
+    */
     agent any
 
     parameters {
