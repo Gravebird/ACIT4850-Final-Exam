@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Code Quantity') {
             steps {
-                sh 'ec -l < App.java'
+                sh 'ec -l < src/main/java/com/mycompany/App.java'
             }
         }
     }
