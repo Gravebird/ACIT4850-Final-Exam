@@ -22,8 +22,7 @@ pipeline {
         }
         stage('Code Quantity') {
             steps {
-                sh 'pwd'
-                sh 'ls'
+                sh 'echo "Bryan Rainbow - Group 26'
                 sh 'wc -l < src/main/java/com/mycompany/app/App.java'
             }
         }
@@ -38,6 +37,20 @@ pipeline {
                 always {
                     junit 'target/surefire-reports/*.xml'
                 }
+            }
+        }
+        stage('Run') {
+            when {
+                expression { params.RUN }
+            }
+            steps {
+                sh 'echo "Finish soon"'
+            }
+        }
+        stage('Build Results') {
+            steps {
+                sh 'echo "Build ${params.BUILD_TYPE} completed successfully"'
+                sh 'echo "I have now completed ACIT 4850!"'
             }
         }
     }
